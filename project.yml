@@ -1,0 +1,46 @@
+name: RunningIntervalApp
+options:
+  bundleIdPrefix: com.rohit.nanania
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+  xcodeVersion: "16"
+  groupSortPosition: top
+
+targets:
+  RunningIntervalApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources/Shared
+      - path: Sources/iOS
+    info:
+      path: Sources/iOS/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rohit.nanania.RunningIntervalApp
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_FILE: Sources/iOS/Info.plist
+    dependencies:
+      - target: "RunningIntervalApp Watch App"
+        embed: true
+
+  "RunningIntervalApp Watch App":
+    type: application
+    platform: watchOS
+    deploymentTarget: "10.0"
+    sources:
+      - path: Sources/Shared
+      - path: Sources/watchOS
+    info:
+      path: Sources/watchOS/Info.plist
+      properties:
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.rohit.nanania.RunningIntervalApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rohit.nanania.RunningIntervalApp.watchkitapp
+        SWIFT_VERSION: "5.9"
+        INFOPLIST_FILE: Sources/watchOS/Info.plist

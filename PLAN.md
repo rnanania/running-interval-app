@@ -136,17 +136,152 @@ RunningIntervalApp/
 ## Implementation Phases
 
 ### Phase 1 — iOS Core
-- [ ] Xcode project setup (iOS + watchOS targets)
-- [ ] `IntervalItem` + `SessionConfig` models
-- [ ] Setup screen: add/remove intervals, tap to increment duration
-- [ ] Running screen: countdown timer, loop logic, ring + haptic on boundary
+- [x] Xcode project setup (iOS + watchOS targets)
+- [x] `IntervalItem` + `SessionManager` models
+- [x] Setup screen: add/remove intervals, tap to increment duration
+- [x] Running screen: countdown timer, loop logic, ring + haptic on boundary
 
 ### Phase 2 — watchOS
-- [ ] Watch app UI mirroring running screen
+- [x] Watch app UI mirroring running screen
 - [ ] WatchConnectivity: send config from phone on Start
-- [ ] Independent timer + alert logic on watch
+- [x] Independent timer + alert logic on watch
 
 ### Phase 3 — Polish
 - [ ] End-of-session summary screen
-- [ ] Double-ring at loop boundary
+- [x] Double-ring at loop boundary
 - [ ] Edge cases: app backgrounded, watch disconnected mid-run
+
+---
+
+## Code Walkthrough
+
+### Layer 1 — Data Model (`Sources/Shared/IntervalItem.swift`)
+
+One interval = one `IntervalItem`. Every interval gets a unique `id` (UUID) when created and starts at 5 seconds. `formattedDuration` turns raw seconds (e.g. `90`) into a readable string (`1:30`).
+
+```swift
+struct IntervalItem: Identifiable, Codable, Equatable {
+    var id = UUID()
+    var durationSeconds: Int = 5
+}
+```
+
+---
+
+### Layer 2 — The Brain (`Sources/Shared/SessionManager.swift`)
+
+The central engine. It's a `class` (not `struct`) because it holds live timer state that mutates over time.
+
+**`@Published` properties** — anything marked `@Published` automatically tells the UI to re-render when it changes:
+
+```swift
+@Published var intervals: [IntervalItem] = []        // the user's configured intervals
+@Published var runState: RunState = .idle             // idle / running / stopped
+@Published var currentIntervalIndex: Int = 0          // which interval is active
+@Published var loopCount: Int = 0                     // how many full loops completed
+@Published var timeRemainingInInterval: Int = 0       // countdown seconds
+@Published var totalElapsedSeconds: Int = 0           // total time since start
+```
+
+**Callbacks** — set externally by the app entry point so the manager stays platform-agnostic:
+
+```swift
+var onIntervalEnd: (() -> Void)?   // called when one interval finishes
+var onLoopEnd: (() -> Void)?       // called when all intervals complete one full loop
+```
+
+**The timer loop** — when `start()` is called:
+1. Resets all counters, sets `runState = .running`
+2. Creates a `Timer` firing every 1 second → calls `tick()`
+3. `tick()` increments `totalElapsedSeconds`, decrements `timeRemainingInInterval`
+4. When `timeRemainingInInterval` hits 0 → calls `advanceInterval()`
+
+**`advanceInterval()`** is the loop engine:
+- If more intervals remain → move to next, fire `onIntervalEnd`
+- If last interval done → wrap back to index 0, increment `loopCount`, fire `onLoopEnd`
+- Either way → load the next interval's duration into `timeRemainingInInterval`
+
+---
+
+### Layer 3 — App Entry Point (`Sources/iOS/RunningIntervalApp.swift`)
+
+`@main` marks where the app starts. `@StateObject` creates one `SessionManager` that lives for the entire app lifetime. The key job here is wiring up the alert callbacks before the UI appears, and passing the manager to all views via `.environmentObject`:
+
+```swift
+sessionManager.onIntervalEnd = { iOSAlertManager.playIntervalEnd() }
+sessionManager.onLoopEnd    = { iOSAlertManager.playLoopEnd() }
+```
+
+---
+
+### Layer 4 — Alert Manager (`Sources/iOS/iOSAlertManager.swift`)
+
+Plays a system sound (`1052` = audible ding) and triggers device haptics. iOS-only file — watchOS has its own equivalent using `WKInterfaceDevice.current().play(...)`.
+
+- **Interval end** → 1 ding + warning haptic
+- **Loop end** → 2 dings 0.5s apart + success haptic (distinguishable from interval end)
+
+---
+
+### Layer 5 — Setup Screen (`Sources/iOS/Views/SetupView.swift` + `IntervalRowView.swift`)
+
+`SetupView` has two states:
+- **Empty** → placeholder icon and hint text
+- **Has intervals** → `List` of `IntervalRowView` rows + loop duration total at the bottom
+
+Bottom controls:
+- **Add Interval** always visible → appends a new `IntervalItem(durationSeconds: 5)`
+- **Start** only appears when `canStart` is true (at least one interval, all with duration > 0)
+
+When **Start** is tapped:
+```swift
+sessionManager.start()   // starts the timer engine
+isRunning = true          // triggers navigation to RunningView
+```
+
+Each `IntervalRowView` shows the interval label and duration. The `+5s` button calls `sessionManager.incrementDuration(for: interval.id)` which finds the interval by its UUID and adds 5 seconds.
+
+---
+
+### Layer 6 — Running Screen (`Sources/iOS/Views/RunningView.swift`)
+
+Reads live from `sessionManager` — every 1-second tick via `@Published` automatically re-renders the UI.
+
+| Element | Data source |
+|---|---|
+| "Loop 3" | `sessionManager.loopCount` |
+| "Interval 2 of 3" | `sessionManager.currentIntervalIndex` |
+| Progress dots | filled = current index, grey = others |
+| Big countdown | `sessionManager.timeRemainingInInterval` |
+| "Elapsed: 4:22" | `sessionManager.totalElapsedSeconds` |
+
+Countdown color changes automatically — white → orange (≤8s) → red (≤3s).
+
+**Stop** calls `sessionManager.stop()` (kills the timer) then `dismiss()` (navigates back).
+**Safety net** — `.onDisappear` also stops the timer if the user swipes back without tapping Stop.
+
+---
+
+### Full App Flow
+
+```
+App launches
+    └── creates SessionManager (one instance, shared everywhere)
+    └── wires onIntervalEnd / onLoopEnd → iOSAlertManager
+
+SetupView appears
+    └── user taps "Add Interval" 3× → 3 IntervalItems created
+    └── user taps +5s on each row → durationSeconds grows
+    └── user taps Start
+            └── sessionManager.start() → timer begins ticking every second
+            └── isRunning = true → RunningView slides in
+
+RunningView ticks every second
+    └── timeRemainingInInterval reaches 0
+    └── advanceInterval() fires
+            ├── more intervals remain → move to next → 1 ding + haptic
+            └── last interval done  → wrap to 0, loopCount++ → 2 dings + haptic
+    └── repeat forever until Stop is tapped
+```
+
+The clean separation: **SessionManager owns all logic**, views just read `@Published` state and render it, alert callbacks are the only platform-specific bridge.

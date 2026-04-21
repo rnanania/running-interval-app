@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F19C18F5B4334143D9CEF4 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792D6C15B56132656AD71D1 /* SessionManager.swift */; };
+		57A0A9E36D0FE6F713FD00BD /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF79E73CFC6D4A50BDB7490 /* RunningView.swift */; };
+		6EF24DDB541696389046ACB4 /* RunningIntervalApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7A9F6228C4597C0A8FC88F35 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D550275330B43068635724 /* SetupView.swift */; };
+		83756B7E0FBFB1063E9B639B /* WatchRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CBC1E77F764820B415CFC8 /* WatchRunningView.swift */; };
+		8833CE2C88C0CADE5D99A643 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792D6C15B56132656AD71D1 /* SessionManager.swift */; };
+		BB5F1A2FFC5108180F02642B /* IntervalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587847E13AC237E8BB057DB /* IntervalItem.swift */; };
+		D03F0567DE59BE38C9B7225F /* RunningIntervalWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB064E1ECCEDCD0D6478CCBE /* RunningIntervalWatchApp.swift */; };
+		DF43AAB84A2636CA6D404463 /* IntervalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD8A26A497BFF1B385B4CF3 /* IntervalRowView.swift */; };
+		E98A9D83ED6D755DF72F0B3E /* RunningIntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4436040D8559B124220F3847 /* RunningIntervalApp.swift */; };
+		F4EFF8C30F4FC24BA2014268 /* iOSAlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D512776F993BDB9C7A47322D /* iOSAlertManager.swift */; };
+		FC20D82C59442CCC1A7A111C /* WatchSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3F89D15AFF1B6A8AC3D358 /* WatchSetupView.swift */; };
+		FD6301666089F7D2CE13DE75 /* IntervalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587847E13AC237E8BB057DB /* IntervalItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		951397CCB29094352141F76D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 757741D8C4A9DA260B19B115 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B01577C1986BDCABDF917B;
+			remoteInfo = "RunningIntervalApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E969152B8AD32362F2A33569 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				6EF24DDB541696389046ACB4 /* RunningIntervalApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2440F436A0D5AC413AD907C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3587847E13AC237E8BB057DB /* IntervalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalItem.swift; sourceTree = "<group>"; };
+		3B3F89D15AFF1B6A8AC3D358 /* WatchSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSetupView.swift; sourceTree = "<group>"; };
+		4436040D8559B124220F3847 /* RunningIntervalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningIntervalApp.swift; sourceTree = "<group>"; };
+		4DB79868019A3583C77E83A5 /* RunningIntervalApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RunningIntervalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BD8A26A497BFF1B385B4CF3 /* IntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRowView.swift; sourceTree = "<group>"; };
+		AADC8D568536EED79C2BCA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B4CBC1E77F764820B415CFC8 /* WatchRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRunningView.swift; sourceTree = "<group>"; };
+		B6D550275330B43068635724 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		CB064E1ECCEDCD0D6478CCBE /* RunningIntervalWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningIntervalWatchApp.swift; sourceTree = "<group>"; };
+		D512776F993BDB9C7A47322D /* iOSAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAlertManager.swift; sourceTree = "<group>"; };
+		D792D6C15B56132656AD71D1 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RunningIntervalApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF79E73CFC6D4A50BDB7490 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		44ED6E68759414EDC3850935 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BD8A26A497BFF1B385B4CF3 /* IntervalRowView.swift */,
+				FDF79E73CFC6D4A50BDB7490 /* RunningView.swift */,
+				B6D550275330B43068635724 /* SetupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		53A5FB225AFF1471E47F650D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				44ED6E68759414EDC3850935 /* Views */,
+				AADC8D568536EED79C2BCA12 /* Info.plist */,
+				D512776F993BDB9C7A47322D /* iOSAlertManager.swift */,
+				4436040D8559B124220F3847 /* RunningIntervalApp.swift */,
+			);
+			name = iOS;
+			path = Sources/iOS;
+			sourceTree = "<group>";
+		};
+		67A45B2FA89715907DA8AF6E = {
+			isa = PBXGroup;
+			children = (
+				53A5FB225AFF1471E47F650D /* iOS */,
+				E8B96B423ABFAE261F8D3E1C /* Shared */,
+				B5AAF6E01F0760C358951435 /* watchOS */,
+				B809E067ACDC0EB15EC29B2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5AAF6E01F0760C358951435 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				FAFDF4256BDECFE122AE8700 /* Views */,
+				2440F436A0D5AC413AD907C0 /* Info.plist */,
+				CB064E1ECCEDCD0D6478CCBE /* RunningIntervalWatchApp.swift */,
+			);
+			name = watchOS;
+			path = Sources/watchOS;
+			sourceTree = "<group>";
+		};
+		B809E067ACDC0EB15EC29B2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */,
+				4DB79868019A3583C77E83A5 /* RunningIntervalApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8B96B423ABFAE261F8D3E1C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3587847E13AC237E8BB057DB /* IntervalItem.swift */,
+				D792D6C15B56132656AD71D1 /* SessionManager.swift */,
+			);
+			name = Shared;
+			path = Sources/Shared;
+			sourceTree = "<group>";
+		};
+		FAFDF4256BDECFE122AE8700 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4CBC1E77F764820B415CFC8 /* WatchRunningView.swift */,
+				3B3F89D15AFF1B6A8AC3D358 /* WatchSetupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49B01577C1986BDCABDF917B /* RunningIntervalApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF331F3CAD0C3F7ACB612F07 /* Build configuration list for PBXNativeTarget "RunningIntervalApp Watch App" */;
+			buildPhases = (
+				F3BF841366FDCCA37A435C1C /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RunningIntervalApp Watch App";
+			packageProductDependencies = (
+			);
+			productName = "RunningIntervalApp Watch App";
+			productReference = DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EACD72216A80B68D68E3CC49 /* RunningIntervalApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C8D5071A1184F7911B52FD3 /* Build configuration list for PBXNativeTarget "RunningIntervalApp" */;
+			buildPhases = (
+				F0BF99F07787BB5CB3F0A415 /* Sources */,
+				E969152B8AD32362F2A33569 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EBAB0D1A0E0E41B1F05E229 /* PBXTargetDependency */,
+			);
+			name = RunningIntervalApp;
+			packageProductDependencies = (
+			);
+			productName = RunningIntervalApp;
+			productReference = 4DB79868019A3583C77E83A5 /* RunningIntervalApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		757741D8C4A9DA260B19B115 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 5F4C7632CAC769BBA4B78C9D /* Build configuration list for PBXProject "RunningIntervalApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 67A45B2FA89715907DA8AF6E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B809E067ACDC0EB15EC29B2A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EACD72216A80B68D68E3CC49 /* RunningIntervalApp */,
+				49B01577C1986BDCABDF917B /* RunningIntervalApp Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0BF99F07787BB5CB3F0A415 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB5F1A2FFC5108180F02642B /* IntervalItem.swift in Sources */,
+				DF43AAB84A2636CA6D404463 /* IntervalRowView.swift in Sources */,
+				E98A9D83ED6D755DF72F0B3E /* RunningIntervalApp.swift in Sources */,
+				57A0A9E36D0FE6F713FD00BD /* RunningView.swift in Sources */,
+				8833CE2C88C0CADE5D99A643 /* SessionManager.swift in Sources */,
+				7A9F6228C4597C0A8FC88F35 /* SetupView.swift in Sources */,
+				F4EFF8C30F4FC24BA2014268 /* iOSAlertManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BF841366FDCCA37A435C1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6301666089F7D2CE13DE75 /* IntervalItem.swift in Sources */,
+				D03F0567DE59BE38C9B7225F /* RunningIntervalWatchApp.swift in Sources */,
+				06F19C18F5B4334143D9CEF4 /* SessionManager.swift in Sources */,
+				83756B7E0FBFB1063E9B639B /* WatchRunningView.swift in Sources */,
+				FC20D82C59442CCC1A7A111C /* WatchSetupView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EBAB0D1A0E0E41B1F05E229 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B01577C1986BDCABDF917B /* RunningIntervalApp Watch App */;
+			targetProxy = 951397CCB29094352141F76D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		372EF7E7246201D3C8DE6510 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sources/watchOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohit.nanania.RunningIntervalApp.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		3B732F3B2D773D44F2BA4032 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sources/watchOS/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohit.nanania.RunningIntervalApp.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		7F113B356AA0EB19806A77ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohit.nanania.RunningIntervalApp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8C11A41ED1DB630DF0A43B44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rohit.nanania.RunningIntervalApp;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD20B433F0B47E6F8D2ACD3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		C0DD73CB21B72A685C78D139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C8D5071A1184F7911B52FD3 /* Build configuration list for PBXNativeTarget "RunningIntervalApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F113B356AA0EB19806A77ED /* Debug */,
+				8C11A41ED1DB630DF0A43B44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5F4C7632CAC769BBA4B78C9D /* Build configuration list for PBXProject "RunningIntervalApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0DD73CB21B72A685C78D139 /* Debug */,
+				AD20B433F0B47E6F8D2ACD3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DF331F3CAD0C3F7ACB612F07 /* Build configuration list for PBXNativeTarget "RunningIntervalApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B732F3B2D773D44F2BA4032 /* Debug */,
+				372EF7E7246201D3C8DE6510 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 757741D8C4A9DA260B19B115 /* Project object */;
+}
