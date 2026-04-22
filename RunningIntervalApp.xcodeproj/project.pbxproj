@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		06F19C18F5B4334143D9CEF4 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D792D6C15B56132656AD71D1 /* SessionManager.swift */; };
 		57A0A9E36D0FE6F713FD00BD /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF79E73CFC6D4A50BDB7490 /* RunningView.swift */; };
+		5BBE35E1C8F7D5C191A15825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A8761596136D21C0FED7EB5 /* Assets.xcassets */; };
+		6C9E2F64E45DF18ED8302096 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95C06516B28CCA4F035C20A /* Assets.xcassets */; };
 		6EF24DDB541696389046ACB4 /* RunningIntervalApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7A9F6228C4597C0A8FC88F35 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D550275330B43068635724 /* SetupView.swift */; };
 		83756B7E0FBFB1063E9B639B /* WatchRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CBC1E77F764820B415CFC8 /* WatchRunningView.swift */; };
@@ -51,6 +53,7 @@
 		3587847E13AC237E8BB057DB /* IntervalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalItem.swift; sourceTree = "<group>"; };
 		3B3F89D15AFF1B6A8AC3D358 /* WatchSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSetupView.swift; sourceTree = "<group>"; };
 		4436040D8559B124220F3847 /* RunningIntervalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningIntervalApp.swift; sourceTree = "<group>"; };
+		4A8761596136D21C0FED7EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DB79868019A3583C77E83A5 /* RunningIntervalApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RunningIntervalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD8A26A497BFF1B385B4CF3 /* IntervalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalRowView.swift; sourceTree = "<group>"; };
 		AADC8D568536EED79C2BCA12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		D512776F993BDB9C7A47322D /* iOSAlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSAlertManager.swift; sourceTree = "<group>"; };
 		D792D6C15B56132656AD71D1 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		DCE6CA07F3DD79CFEE937E54 /* RunningIntervalApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RunningIntervalApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95C06516B28CCA4F035C20A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF79E73CFC6D4A50BDB7490 /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				44ED6E68759414EDC3850935 /* Views */,
+				4A8761596136D21C0FED7EB5 /* Assets.xcassets */,
 				AADC8D568536EED79C2BCA12 /* Info.plist */,
 				D512776F993BDB9C7A47322D /* iOSAlertManager.swift */,
 				4436040D8559B124220F3847 /* RunningIntervalApp.swift */,
@@ -100,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFDF4256BDECFE122AE8700 /* Views */,
+				F95C06516B28CCA4F035C20A /* Assets.xcassets */,
 				2440F436A0D5AC413AD907C0 /* Info.plist */,
 				CB064E1ECCEDCD0D6478CCBE /* RunningIntervalWatchApp.swift */,
 			);
@@ -143,6 +149,7 @@
 			buildConfigurationList = DF331F3CAD0C3F7ACB612F07 /* Build configuration list for PBXNativeTarget "RunningIntervalApp Watch App" */;
 			buildPhases = (
 				F3BF841366FDCCA37A435C1C /* Sources */,
+				6D93971CFFCEAD382F37A123 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +167,7 @@
 			buildConfigurationList = 4C8D5071A1184F7911B52FD3 /* Build configuration list for PBXNativeTarget "RunningIntervalApp" */;
 			buildPhases = (
 				F0BF99F07787BB5CB3F0A415 /* Sources */,
+				788E2C365FB9BC1EF7F00048 /* Resources */,
 				E969152B8AD32362F2A33569 /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -204,6 +212,25 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D93971CFFCEAD382F37A123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C9E2F64E45DF18ED8302096 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788E2C365FB9BC1EF7F00048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BBE35E1C8F7D5C191A15825 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0BF99F07787BB5CB3F0A415 /* Sources */ = {
