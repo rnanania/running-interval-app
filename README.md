@@ -1,4 +1,4 @@
-# Running Interval Timer
+# Cadence — Running Interval Timer
 
 A minimal iPhone + Apple Watch app for runners who train with time-based intervals. Configure multiple intervals, tap Start, and the app rings at every boundary — looping indefinitely until you stop.
 

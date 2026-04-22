@@ -17,6 +17,8 @@ targets:
       - path: Sources/iOS
     info:
       path: Sources/iOS/Info.plist
+      properties:
+        CFBundleDisplayName: Cadence
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.rohit.nanania.RunningIntervalApp
@@ -38,6 +40,7 @@ targets:
     info:
       path: Sources/watchOS/Info.plist
       properties:
+        CFBundleDisplayName: Cadence
         WKApplication: true
         WKCompanionAppBundleIdentifier: com.rohit.nanania.RunningIntervalApp
     settings:
